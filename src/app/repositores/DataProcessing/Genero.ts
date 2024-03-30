@@ -3,22 +3,22 @@ import { getData } from '../struct';
 export const dadosGenero = getData('Qual o seu gênero?');
 
 interface Genero {
-  genero: Array<string>;
+  nome: Array<string>;
   quantidade: Array<number>;
 }
 
-const genero: Genero = { genero: [], quantidade: [] };
+const genero: Genero = { nome: [], quantidade: [] };
 
 dadosGenero.forEach((item) => {
-  if (genero.genero.length === 0) {
-    genero.genero.push(String(item?.propis));
+  if (genero.nome.length === 0) {
+    genero.nome.push(String(item?.propis));
     genero.quantidade.push(1);
   }
-  if (!genero.genero.includes(String(item?.propis))) {
-    genero.genero.push(String(item?.propis));
+  if (!genero.nome.includes(String(item?.propis))) {
+    genero.nome.push(String(item?.propis));
     genero.quantidade.push(1);
   } else {
-    const index = genero.genero.indexOf(String(item?.propis));
+    const index = genero.nome.indexOf(String(item?.propis));
     genero.quantidade[index] += 1;
   }
 });

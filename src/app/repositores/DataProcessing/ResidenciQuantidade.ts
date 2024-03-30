@@ -4,21 +4,21 @@ import { getData } from '../struct';
 const dadosResidencia = getData('Qual sua cidade de residência?');
 
 interface Residencia {
-  cidade: Array<string>;
+  nome: Array<string>;
   quantidade: Array<number>;
 }
-const residencia: Residencia = { cidade: [], quantidade: [] };
+const residencia: Residencia = { nome: [], quantidade: [] };
 
 dadosResidencia.forEach((item) => {
-  if (residencia.cidade.length === 0) {
-    residencia.cidade.push(String(item?.propis));
+  if (residencia.nome.length === 0) {
+    residencia.nome.push(String(item?.propis));
     residencia.quantidade.push(1);
   }
-  if (!residencia.cidade.includes(String(item?.propis))) {
-    residencia.cidade.push(String(item?.propis));
+  if (!residencia.nome.includes(String(item?.propis))) {
+    residencia.nome.push(String(item?.propis));
     residencia.quantidade.push(1);
   } else {
-    const index = residencia.cidade.indexOf(String(item?.propis));
+    const index = residencia.nome.indexOf(String(item?.propis));
     residencia.quantidade[index] += 1;
   }
 });

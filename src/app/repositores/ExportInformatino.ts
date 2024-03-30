@@ -1,8 +1,8 @@
 import residencia from './DataProcessing/ResidenciQuantidade';
-import curso from './DataProcessing/QualCurso';
+import periodo from './DataProcessing/Periodo';
 import genero from './DataProcessing/Genero';
 import estado from './DataProcessing/Estado';
 
-const Information: Object = { residencia, curso, genero, estado };
+const Information: Object = { residencia, periodo, genero, estado };
 
 export default Information;
