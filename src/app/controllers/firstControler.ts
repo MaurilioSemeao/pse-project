@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import residenciQuantidad from '../repositores/ResidenciQuantidade';
+import residenciQuantidad from '../repositores/DataProcessing/ResidenciQuantidade';
 import Information from '../repositores/ExportInformatino';
 
 class FirstController {

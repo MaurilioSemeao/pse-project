@@ -1,6 +1,6 @@
 import express from 'express';
-import firstControler from './app/controllers/firstControler';
 import cors from 'cors';
+import firstControler from './app/controllers/firstControler';
 const app = express();
 
 app.use((req, res, next) => {

@@ -11,5 +11,5 @@ class ExportadorJSON {
   }
 }
 
-// Exemplo de uso
-export default new ExportadorJSON();
+const tabelaDados = new ExportadorJSON().getTableJons();
+export default tabelaDados;
