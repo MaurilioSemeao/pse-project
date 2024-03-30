@@ -8,6 +8,9 @@
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
+  "endgines": {
+    "node": "20"
+  },
   "scripts": {
     "start:dev": "nodemon",
     "build": "tsup src",
