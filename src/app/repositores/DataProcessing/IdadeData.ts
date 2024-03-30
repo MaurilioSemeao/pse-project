@@ -13,41 +13,46 @@ const dataNumber = dataValue.map((item) => {
   }
 });
 interface Idade {
-  _18_20: Array<PropsIdade>;
-  _21_30: Array<PropsIdade>;
-  _31_40: Array<PropsIdade>;
-  _41_: Array<PropsIdade>;
+  _18_20: PropsIdade;
+  _21_30: PropsIdade;
+  _31_40: PropsIdade;
+  _41_: PropsIdade;
 }
 interface PropsIdade {
   nome: string;
   quantidade: number;
 }
-const faixaEtaria: Idade = { _18_20: [], _21_30: [], _31_40: [], _41_: [] };
+const faixaEtaria: Idade = {
+  _18_20: { nome: '', quantidade: 0 },
+  _21_30: { nome: '', quantidade: 0 },
+  _31_40: { nome: '', quantidade: 0 },
+  _41_: { nome: '', quantidade: 0 },
+};
 dataNumber.forEach((item) => {
   if (item) {
     if (item.idade === 18 && item.idade <= 20) {
-      if (faixaEtaria._18_20.length === 0) {
-        faixaEtaria._18_20.push({ nome: '18-20', quantidade: 1 });
+      if (faixaEtaria._18_20.quantidade === 0) {
+        faixaEtaria._18_20 = { nome: '18-20', quantidade: 1 };
       }
-      faixaEtaria._18_20[0].quantidade += 1;
+      faixaEtaria._18_20.quantidade += 1;
     }
     if (item.idade >= 21 && item.idade <= 30) {
-      if (faixaEtaria._21_30.length === 0) {
-        faixaEtaria._21_30.push({ nome: '21-30', quantidade: 1 });
+      if (faixaEtaria._21_30.quantidade === 0) {
+        faixaEtaria._21_30 = { nome: '21-30', quantidade: 1 };
       }
-      faixaEtaria._21_30[0].quantidade += 1;
+      faixaEtaria._21_30.quantidade += 1;
     }
     if (item.idade >= 31 && item.idade <= 40) {
-      if (faixaEtaria._31_40.length === 0) {
-        faixaEtaria._31_40.push({ nome: '31-40', quantidade: 1 });
+      if (faixaEtaria._31_40.quantidade === 0) {
+        faixaEtaria._31_40 = { nome: '31-40', quantidade: 1 };
       }
-      faixaEtaria._31_40[0].quantidade += 1;
+      faixaEtaria._31_40.quantidade += 1;
     }
     if (item.idade >= 41) {
-      if (faixaEtaria._41_.length === 0) {
-        faixaEtaria._41_.push({ nome: '41+', quantidade: 1 });
+      if (faixaEtaria._41_.quantidade === 0) {
+        faixaEtaria._41_ = { nome: '41+', quantidade: 1 };
       }
-      faixaEtaria._41_[0].quantidade += 1;
+      faixaEtaria._41_.quantidade += 1;
     }
   }
 });
