@@ -1,10 +1,9 @@
 import { Request, Response } from 'express';
-import residenciQuantidad from '../repositores/DataProcessing/ResidenciQuantidade';
-import Information from '../repositores/ExportInformatino';
+import information from '../repositores/DataProcessing/ProcessingDatas';
 
 class FirstController {
   public index(req: Request, res: Response) {
-    res.send(JSON.stringify(Information));
+    res.send(JSON.stringify(information));
   }
 }
 
